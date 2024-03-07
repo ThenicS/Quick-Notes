@@ -1,0 +1,14 @@
+# Ignore .env file
+.env
+
+# Ignore node_modules and dist directories
+node_modules/
+dist/
+
+# node_modules and dist directories,
+./server/node_modules/
+./server/dist/
+
+# node_modules and dist directories,
+./client/node_modules/
+./client/dist/
