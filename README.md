@@ -1,4 +1,4 @@
-# MERN_TYPE_START
+# MERN_QUICK_NOTE
 
 cd client
 npm i
