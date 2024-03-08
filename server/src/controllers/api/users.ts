@@ -18,6 +18,22 @@ const create = async (req: Request, res: Response) => {
     }
 };
 
+const login = async (req: Request, res: Response) => {
+    try {
+        // Find the user by their email address
+        // user type any <<<<<<<
+        const user: any = await User.findOne({ email: req.body.email });
+        if (!user) throw new Error();
+        // Check if the password matches
+        const match = await bcrypt.compare(req.body.password, user.password);
+        if (!match) throw new Error();
+        res.json(createJWT(user));
+    } catch (error) {
+        console.log(error);
+        res.status(400).json('Bad Credentials');
+    }
+};
+
 /* Helper Functions */
 function createJWT(user: any) {
     return jwt.sign(
@@ -28,4 +44,4 @@ function createJWT(user: any) {
     );
 }
 
-export default { create };
+export default { create, login };

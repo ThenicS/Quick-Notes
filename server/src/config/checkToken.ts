@@ -7,7 +7,7 @@ interface AuthenticatedRequest extends Request {
     exp?: Date; // change type later
 }
 
-const authenticateUser = (
+const checkToken = (
     req: AuthenticatedRequest,
     res: Response,
     next: NextFunction
@@ -35,4 +35,4 @@ const authenticateUser = (
     });
 };
 
-export default authenticateUser;
+export default checkToken;

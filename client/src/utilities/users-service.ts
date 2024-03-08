@@ -13,6 +13,12 @@ export async function signUp(userData: any) {
     return getUser();
 }
 
+export async function login(credentials: any) {
+    const token = await usersAPI.login(credentials);
+    localStorage.setItem('token', token);
+    return getUser();
+}
+
 export function getToken() {
     // getItem will return null if the key does not exists
     const token = localStorage.getItem('token');

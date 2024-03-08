@@ -12,7 +12,7 @@ import express from 'express';
 import cors from 'cors';
 import logger from 'morgan';
 import connectDB from './config/databse';
-import authenticateUser from './config/checkToken';
+import checkToken from './config/checkToken';
 // import usersApi from './routes/api/users';
 // dotenv.config();
 connectDB();
@@ -35,7 +35,7 @@ app.use(
 
 app.use(express.static(path.join(__dirname, '../../client/dist')));
 
-app.use(authenticateUser);
+app.use(checkToken);
 // Middleware to check and verify a JWT and
 // assign the user object from the JWT to req.user
 import usersApi from './routes/api/users';

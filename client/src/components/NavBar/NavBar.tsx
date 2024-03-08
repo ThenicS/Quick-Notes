@@ -8,6 +8,8 @@ const NavBar: React.FunctionComponent<INavBarProps> = () => {
             <Link to='/'>Home</Link>
             &nbsp; | &nbsp;
             <Link to='/register'>Register</Link>
+            &nbsp; | &nbsp;
+            <Link to='/login'>Log In</Link>
         </nav>
     );
 };
