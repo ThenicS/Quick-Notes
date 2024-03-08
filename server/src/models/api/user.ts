@@ -23,7 +23,7 @@ const userSchema = new Schema(
         },
     },
     {
-        timestamp: true,
+        timestamps: true,
         toJSON: {
             transform: function (doc, ret) {
                 delete ret.password;

@@ -1,11 +1,15 @@
 import * as React from 'react';
+import SignUpform from '../../components/SignUpForm/SignUpForm';
 
-interface IAuthPageProps {}
+interface IAuthPageProps {
+    setUser: any;
+}
 
-const AuthPage: React.FunctionComponent<IAuthPageProps> = () => {
+const AuthPage: React.FunctionComponent<IAuthPageProps> = ({ setUser }) => {
     return (
         <>
             <div>AuthPage</div>
+            <SignUpform setUser={setUser} />
         </>
     );
 };
