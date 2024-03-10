@@ -2,8 +2,9 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { signUp } from '../../utilities/users-service';
 
+import { IUser } from '../../interface/interface';
 interface ISignUpformProps {
-    setUser: (user: any) => void;
+    setUser: (user: IUser) => void;
 }
 
 const SignUpform: React.FunctionComponent<ISignUpformProps> = ({ setUser }) => {

@@ -13,8 +13,8 @@ interface INotePageProps {
 const NotePage: React.FunctionComponent<INotePageProps> = ({ user }) => {
     const [notes, setNotes] = useState<INote[]>([]);
 
-    const createNote = (newNote: any) => {
-        const createNotes: any = [...notes, newNote];
+    const createNote = (newNote: INote) => {
+        const createNotes: INote[] = [...notes, newNote];
         // setNotes(createNotes);
         setNotes(createNotes);
     };
@@ -43,7 +43,7 @@ const NotePage: React.FunctionComponent<INotePageProps> = ({ user }) => {
     return (
         <div>
             <NoteList notes={notes} onDelete={deleteNoteById} />
-            <NoteCreate onCreate={createNote} />
+            <NoteCreate onCreate={createNote} user={user} />
         </div>
     );
 };

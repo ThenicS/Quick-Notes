@@ -1,12 +1,16 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import * as notesAPI from '../../utilities/notes-api';
 
+import { INote, IUser } from '../../interface/interface';
+
 interface INoteCreateProps {
-    onCreate: any;
+    onCreate: (note: INote) => void;
+    user: IUser;
 }
 
 const NoteCreate: React.FunctionComponent<INoteCreateProps> = ({
     onCreate,
+    user,
 }) => {
     const [title, setTitle] = useState('');
 
@@ -36,6 +40,9 @@ const NoteCreate: React.FunctionComponent<INoteCreateProps> = ({
                 <input value={title} onChange={handleChange} />
                 <button type='submit'>Create</button>
             </form>
+            <div>
+                <span>Welcome:{user.name}</span>
+            </div>
         </div>
     );
 };
